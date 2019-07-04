@@ -845,12 +845,13 @@ class GithubIntegration:
 
         return encrypted
 
-    def get_access_token(self, installation_id, user_id=None):
+    def get_access_token(self, installation_id, user_id=None, expiration=60):
         """
         Get an access token for the given installation id.
         POSTs https://api.github.com/app/installations/<installation_id>/access_tokens
         :param user_id: int
         :param installation_id: int
+        :param expiration: int
         :return: :class:`github.InstallationAuthorization.InstallationAuthorization`
         """
         body = {}
